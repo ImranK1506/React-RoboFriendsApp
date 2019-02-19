@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## React - RoboFriends App
 
-In this project we create some card components, which data is obtained from an API. This project was setup to play around with React.
+In this project we create some card components with data obtained from an API. This project was setup to play around with React.
 
 ## Available Scripts
 
