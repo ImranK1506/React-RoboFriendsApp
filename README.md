@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In this project we create some card components with data obtained from an API. This project was setup to play around with React.
 
+## Live Preview
+
+[RoboFriends](https://build-6fjf77xzd.now.sh/)
+
 ## Available Scripts
 
 In the project directory, you can run:

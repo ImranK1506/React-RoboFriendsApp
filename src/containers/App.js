@@ -33,7 +33,7 @@ class App extends Component {
    }
 
    render() {
-      const {robots, searchfield} = this.state;
+      const { robots, searchfield } = this.state;
       // filter per robot
       const filteredRobots = robots.filter(robot => {
          return robot.name
