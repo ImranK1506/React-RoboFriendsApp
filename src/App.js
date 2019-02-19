@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CardList from './CardList';
 import SearchBox from './SearchBox';
-import { robots } from "./robots";
+// import { robots } from "./robots";
 import './App.css'
 
 class App extends Component {
@@ -19,8 +19,16 @@ class App extends Component {
    };
 
    componentDidMount() {
-      this.setState({ robots: robots })
-      console.log('The componentDidMount is triggered as last');
+      // Grabbing data from local json
+      // this.setState({ robots: robots })
+
+      // Grabbing data from API
+      fetch('https://jsonplaceholder.typicode.com/users')
+       .then(response => response.json())
+       .then(users => this.setState({robots: users}));
+       // Test Loading if response had delay
+       // .then(users => {});
+       console.log('The componentDidMount is triggered as last');
    }
 
    render() {
@@ -32,14 +40,19 @@ class App extends Component {
                  this.state.searchfield.toLowerCase()
              );
       });
-      console.log('The Rendering happens next');
-      return (
-          <div className='tc'>
-             <h1 className='f1'>RoboFriends</h1>
-             <SearchBox searchChange={this.onSearchChange}/>
-             <CardList robots={filteredRobots} />
-          </div>
-      );
+      // In case of latency on fetching API
+      if (this.state.robots.length === 0) {
+         return <h1>Loading...</h1>
+      } else {
+         console.log('The Rendering happens next');
+         return (
+             <div className='tc'>
+                <h1 className='f1'>RoboFriends</h1>
+                <SearchBox searchChange={this.onSearchChange}/>
+                <CardList robots={filteredRobots}/>
+             </div>
+         );
+      }
    }
 }
 
