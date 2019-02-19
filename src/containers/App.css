@@ -2,7 +2,7 @@
     font-family: 'Space Age';
     font-style: normal;
     font-weight: normal;
-    src: local('Space Age'), url('./space age.woff') format('woff');
+    src: local('Space Age'), url('space age.woff') format('woff');
 }
 
 h1 {
